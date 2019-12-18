@@ -1,0 +1,241 @@
+/***************************************************
+                    GENERIC STYLES
+****************************************************/
+body, html {
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    background-image: linear-gradient(to left, #252525, #272727, #282828, #2a2a2a, #2c2c2c);
+}
+/* Fix the box-modelto keep sizes precise */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #D9D9D9;
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #D9D9D9
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color:#D9D9D9;
+}
+.bold-italic {
+    font-style: italic;
+    font-size: 0.8em;
+    font-weight: bold;
+
+}
+
+/***************************************************
+                RESPONSIVE COLUMNS
+****************************************************/
+.col-4 {
+    width: 32% !important;
+    display: inline-block;
+}
+.col-6 {
+    width: 45% !important;
+    margin-right: 2%;
+    display: inline-block;
+}
+.col-12 {
+    width: 100% !important;
+    display: block;
+}
+
+/***************************************************
+                        MAZE
+****************************************************/
+#container {
+    width: 700px; /* Same as Maze Canvas width */
+    margin: 0 auto;
+    display: block;
+}
+.page-title {
+    color: gold;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    padding: 5px 0px;
+    border-right: none;
+    border-left: none;
+}
+#canvas-settings {
+    margin-bottom: 20px;
+}
+.formField {
+    margin: 15px 0;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #FFFFFF;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, 0.3);
+    color: #D9D9D9;
+    outline: none;
+}
+select option {
+    margin: 40px;
+    background: #141E30;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+label {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.score-table {
+    border: 2px solid #FFFFFF;
+    padding: 5px;
+    margin: 10px 0px;
+
+}
+.gameButton {
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 0px;
+    width: 100%;
+    text-transform: uppercase;
+    border-radius: 1px;
+    border: 1px solid #FFFFFF;
+    background: rgba(197, 196, 196, 0.13);
+    color: #D9D9D9;
+    outline: none;
+    transition: 1s all;
+}
+.gameButton:hover {
+    background: rgba(20, 20, 20, .4);
+    cursor: pointer;
+}
+#alert {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 50%;
+    bottom: 50%;
+    text-align: center;
+}
+#alert span {
+    padding: 20px 100px;
+    color: #ffffff;
+    border: 2px groove gold;
+    font-size: 18px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+    background: rgba(0, 0, 0, 0.9);
+}
+#score, #countdown {
+    font-weight: normal;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+}
+progress {
+    height: 10px;
+    background: #000000;
+}
+progress::-moz-progress-bar {
+      background: gold;
+}
+progress::-webkit-progress-bar {
+    background: transparent;
+}
+progress::-webkit-progress-value {
+    background: gold;
+}
+
+#score{
+    color: gold;
+    font-weight: bold;
+    font-size: 18px;
+}
+#score::before {
+    content: 'Coins: ';
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+#score::after {
+    content: 'G';
+}
+#room {
+    color: gold;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+#room::before {
+    content: 'Room: ';
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+#countdown::before {
+    content: 'Threat Meter: ';
+    font-weight: bold;
+    font-size: 18px;
+}
+#choice {
+    display: block;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 22px;
+}
+#maze {
+    background: #b7b4b4;
+    border: 1px double #FFFFFF;
+    margin: 0 auto;
+    display: block;
+}
+#instructions-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+.instruction-title {
+    text-align: center; 
+    color: gold;
+    font-weight:  bold;
+    padding: 5px;
+    text-transform: uppercase;
+}
+.instructions-content {
+    background-color: #FFFFFF;
+    margin: 10% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%;
+}
+ol.instructions li {
+    margin-bottom: 8px;
+}
+.close-instructions-btn {
+    color: #AAAAAA;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-instructions-btn:hover,
+.close-instructions-btn:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}

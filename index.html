@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Olde Worlde Phunne - Maze Game</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+    <div id="container">
+
+        <div class="col-12">
+            <h2 class="page-title">Olde Worlde Phunne - Maze Game</h2>
+        </div>
+
+        <form id="canvas-settings">
+
+            <div class="col-4">
+                <label for="cells">Grid Width:</label>
+                <input type="number" min="5" max="50" class="formField" id="cells" name="cells" placeholder="Number of cells" value=""/>
+            </div>
+
+            <div class="col-4">
+                <span id="choice">OR</span>
+            </div>
+
+            <div class="col-4">
+                <label for="difficulty">Difficulty:</label>
+                <select class="formField" id="difficulty">
+                    <option value="" selected="selected" disabled>Select a difficulty...</option>
+                    <option value="5">Easy</options>
+                    <option value="10">Normal</option>
+                    <option value="15">Expert</option>
+                    <option value="25">Master</option>
+                </select>
+            </div>
+
+            <div class="col-12">
+                <input type="submit" class="gameButton" id="generate" value="Generate & Play!">
+            </div>
+
+            <div class="col-12 score-table">
+
+                <div class="col-4">
+                    <div id="score">0</div>
+                </div>
+
+                <div class="col-4">
+                        <div id="room">1</div>
+                    </div>
+
+                <div class="col-4">
+                    <div id="countdown">
+                        <progress id="gameTimer">s</progress>
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+
+        <div id="mazeWrapper">
+            <canvas id="maze"></canvas>
+        </div>
+
+        <div class="col-12">
+            <input type="submit" id="instructions-btn" class="gameButton" value="How to play?">
+        </div>
+
+        <div id="instructions-modal">
+            <div class="instructions-content">
+                <span class="close-instructions-btn">&times;</span>
+                <h2 class="instruction-title">Old Worlde Phunne Maze Game</h2>
+                <p><strong>Instructions:</strong></p>
+                <ol type="i" class="instructions">
+                    <li>Enter a number of cells or select a difficulty.</li>
+                    <li>Click the generate button to create the maze.</li>
+                    <li>Navigate Thylanaes the Night Elf through the maze to collect the gold.</li>
+                    <li>Note: Move using the <strong>WSAD</strong> keys.</li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/maze.js"></script>
+</body>
+</html>
